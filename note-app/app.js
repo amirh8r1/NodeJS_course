@@ -1,9 +1,8 @@
-const myName = require('./utils.js')
-
-console.log(myName)
-
+const validator = require('validator')
 const getNotes = require('./notes.js')
 
 const msg = getNotes()
-
 console.log(msg)
+
+console.log(validator.isEmail('amir@example.com'))
+console.log(validator.isURL('https://mead.io'))
