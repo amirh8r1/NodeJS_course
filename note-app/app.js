@@ -1,8 +1,8 @@
-const validator = require('validator')
+const chalk = require('chalk')
 const getNotes = require('./notes.js')
 
 const msg = getNotes()
 console.log(msg)
 
-console.log(validator.isEmail('amir@example.com'))
-console.log(validator.isURL('https://mead.io'))
+const greenMsg = chalk.green.bold.inverse('Success!')
+console.log(greenMsg)
