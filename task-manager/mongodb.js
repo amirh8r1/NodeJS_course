@@ -65,4 +65,28 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
         console.log(result.ops)
     })
+
+    db.collection('users').findOne({ _id: new ObjectID("..."), name: 'Amir', age: 1 }, (error, user) => {
+        if (error) {
+            return console.log('Unable to fetch')
+        }
+
+        console.log(user)
+    })
+
+    db.collection('users').find({ age: 27 }).toArray((error, users) => {
+        console.log(users)
+    })
+
+    db.collection('users').find({ age: 27 }).count((error, count) => {
+        console.log(count)
+    })
+
+    db.collection('tasks').findOne({ _id: ObjectID("...") }, (error, task) => {
+        console.log(task)
+    })
+
+    db.collection('tasks').find({ completed: false }).toArray((error, tasks) => {
+        console.log(tasks)
+    })
 })
