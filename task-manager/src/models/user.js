@@ -59,7 +59,7 @@ userSchema.method.getPublicProfile = function () {
     return userObject
 }
 
-userSchema.methods.toJSON/*generateAuthToken*/ = async function () {
+userSchema.methods.toJSON = async function () {
     const user = this
     const token = jwt.sign({ _id: user._id.toString() }, 'thisismynewcourse')
 
